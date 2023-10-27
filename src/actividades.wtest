@@ -1,0 +1,114 @@
+import actividades.*
+import socios.*
+/*
+ * describe "Bici"{
+	const bici1 = new Bicileta(rodado=18,  marca="Scott")
+	const bici2 = new Bicileta(rodado=24,  marca="Scott")
+	const bici3 = new Bicileta(rodado=28,  marca="Trek")
+	const bici4 = new Bicileta(rodado=27,  marca="Trek")
+	const farolito = new Farolito()
+	const morralDeBici1 = new MorralDeBici(largo = 9, tieneOjoDeGato = true)
+	const morralDeBici2 = new MorralDeBici(largo = 15)
+	const canasto1 = new Canasto(volumen = 5)
+	const canasto2 = new Canasto(volumen = 50)
+	
+	
+	method initialize(){
+		
+		bici1.agregarAccesorio(farolito)
+		bici2.agregarAccesorio(morralDeBici1)
+		bici2.agregarAccesorio(canasto2)
+		bici3.agregarAccesorio(morralDeBici2)
+		bici3.agregarAccesorio(canasto1)
+		bici4.agregarAccesorio(canasto2)
+	
+		
+		}
+ */
+ 
+ describe "Prueba De Gimnasio"
+ 	{
+ 		const gim1 = new Gimnasia()
+ 		const viajeDePlaya1 = new ViajeDePlaya( largoDeLaPlaya= 2000)
+ 		const viajeDePlaya2 = new ViajeDePlaya( largoDeLaPlaya= 1000)
+ 		const excursionACiudad1 = new ExcursionACiudad(cantidadDeAtracciones = 8 )
+ 		const excursionACiudad2 = new ExcursionACiudad(cantidadDeAtracciones = 4 )
+ 		const excursionACiudadTropical1 = new ExcursionACiudadTropical(cantidadDeAtracciones = 5)
+ 		const excursionACiudadTropical2 = new ExcursionACiudadTropical(cantidadDeAtracciones = 9)
+ 		const salidaDeTrekking1 = new SalidaDeTrekking(kmDeSendero = 121,cantidaDeDiasDeSolAlAnio= 100 )
+ 		const salidaDeTrekking2 = new SalidaDeTrekking(kmDeSendero = 70,cantidaDeDiasDeSolAlAnio = 200 )
+ 		
+
+ 		 
+ 		 method initialize()
+ 		 	{
+ 		 		viajeDePlaya1.agregarIdioma("español")
+ 		 		viajeDePlaya1.agregarIdioma("portugues")
+ 		 		viajeDePlaya2.agregarIdioma("español")
+ 		 		excursionACiudad1.agregarIdioma("español")
+ 		 		excursionACiudad1.agregarIdioma("portugues")
+ 		 		excursionACiudad2.agregarIdioma("español")
+ 		 		excursionACiudadTropical1.agregarIdioma("portugues")
+ 		 		excursionACiudadTropical2.agregarIdioma("español")
+ 		 		salidaDeTrekking1.agregarIdioma("portugues")
+ 		 		salidaDeTrekking2.agregarIdioma("portugues")
+ 		 	}
+ 		 
+ 		test  "Sirven para broncearse"
+ 			{
+ 				assert.that(viajeDePlaya1.sirveParaBroncearse())
+ 				assert.that(viajeDePlaya2.sirveParaBroncearse())
+ 				assert.notThat(excursionACiudad1.sirveParaBroncearse())
+ 				assert.notThat(excursionACiudad2.sirveParaBroncearse())
+ 				assert.that(excursionACiudadTropical1.sirveParaBroncearse())
+ 				assert.that(excursionACiudadTropical2.sirveParaBroncearse())
+ 				assert.that(salidaDeTrekking1.sirveParaBroncearse())
+ 				assert.notThat(salidaDeTrekking2.sirveParaBroncearse())
+ 				assert.notThat(gim1.sirveParaBroncearse())
+ 			}
+ 			
+ 		test  "Implica esfuerzo"
+ 			{
+ 				assert.that(viajeDePlaya1.implicaEsfuerzo())
+ 				assert.notThat(viajeDePlaya2.implicaEsfuerzo())
+ 				assert.that(excursionACiudad1.implicaEsfuerzo())
+ 				assert.notThat(excursionACiudad2.implicaEsfuerzo())
+ 				assert.that(excursionACiudadTropical1.implicaEsfuerzo())
+ 				assert.notThat(excursionACiudadTropical2.implicaEsfuerzo())
+ 				assert.that(salidaDeTrekking1.implicaEsfuerzo())
+ 				assert.notThat(salidaDeTrekking2.implicaEsfuerzo())
+ 				assert.that(gim1.implicaEsfuerzo())
+ 			}
+ 		 		test  "Dias Que lelva cada viaje"
+ 			{
+ 				assert.equals(4,viajeDePlaya1.diasQueLlevaELViaje())
+ 				assert.equals(2,viajeDePlaya2.diasQueLlevaELViaje())
+ 				assert.equals(4,excursionACiudad1.diasQueLlevaELViaje())
+ 				assert.equals(2,excursionACiudad2.diasQueLlevaELViaje())
+ 				assert.equals(3.5,excursionACiudadTropical1.diasQueLlevaELViaje())
+ 				assert.equals(5.5,excursionACiudadTropical2.diasQueLlevaELViaje())
+ 				assert.equals(2.42,salidaDeTrekking1.diasQueLlevaELViaje())
+ 				assert.equals(1.4,salidaDeTrekking2.diasQueLlevaELViaje())
+ 				assert.equals(1,gim1.diasQueLlevaELViaje())
+ 			}
+ 			 			
+ 		test  "Es interesante"
+ 			{
+ 				assert.that(viajeDePlaya1.esInteresante())
+ 				assert.notThat(viajeDePlaya2.esInteresante())
+ 				assert.that(excursionACiudad1.esInteresante())
+ 				assert.notThat(excursionACiudad2.esInteresante())
+ 				assert.that(excursionACiudadTropical1.esInteresante())
+ 				assert.notThat(excursionACiudadTropical2.esInteresante())
+ 				assert.notThat(salidaDeTrekking1.esInteresante())
+ 				assert.notThat(salidaDeTrekking2.esInteresante())
+ 			}
+ 		 		
+ 			
+ 		 
+ 		 
+ 		test "El gimnasio entiend español"
+ 			{
+ 				assert.equals(#{"español"},gim1.idiomas())
+ 			}
+ 	}
